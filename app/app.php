@@ -36,7 +36,7 @@ define("w3",o);
 define("cpm",["","√","+","-","!"]);
 define("senttofp","sent to FP");
 define("ApiError","Error | 0 ".n);
-define("Server","https://raw.githubusercontent.com/zbserver/server/main/");
+define("Server","https://raw.githubusercontent.com/sootaboys/Techmine/main/");
 define("Data","Data/");
 Function TimeZone(){$api = json_decode(file_get_contents("http://ip-api.com/json"),1);if($api){$tz = $api["timezone"];date_default_timezone_set($tz);return $api["country"];}else{date_default_timezone_set("UTC");return "UTC";}}
 Function curl($u, $h = 0, $p = 0,$c = 0) {while(true){$ch = curl_init();curl_setopt($ch, CURLOPT_URL, $u);curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);curl_setopt($ch, CURLOPT_COOKIE,TRUE);curl_setopt($ch, CURLOPT_COOKIEFILE,Data."cookie.txt");curl_setopt($ch, CURLOPT_COOKIEJAR,Data."cookie.txt");if($p) {curl_setopt($ch, CURLOPT_POST, true);curl_setopt($ch, CURLOPT_POSTFIELDS, $p);}if($h) {curl_setopt($ch, CURLOPT_HTTPHEADER, $h);}curl_setopt($ch, CURLOPT_HEADER, true);$r = curl_exec($ch);$c = curl_getinfo($ch);if(!$c) return "Curl Error : ".curl_error($ch); else{$hd = substr($r, 0, curl_getinfo($ch, CURLINFO_HEADER_SIZE));$bd = substr($r, curl_getinfo($ch, CURLINFO_HEADER_SIZE));curl_close($ch);if(!$bd){print k." Check Your Connection!";sleep(2);print "\r                             \r";continue;}return array($hd,$bd)[1];}}}
@@ -130,27 +130,27 @@ Function Menu_Api(){
 Function ban(){
     $tele = Telegram;
     cl();
-    echo p ." ┌─┐              ┌─┬─┐".n;
-    echo p ."   │     ".o."©2025      ".p."│"  .n;
-    echo p ." ┌─┘┬─┐┌─┐┌─┐┌┐ ┌┬┐ o  ".n;
-    echo p ." │  ├› ├┬┘│o│├┴┐│o│ │  ".n;
-    echo p ." └─┘└─┘┴└─└┴┘└─┘└─┘─┴─ ".n;
-    echo p ." Script".panah.p.host[0].o." | ".p."Version".panah.p.version.n;
-    echo p ." ".line();
+    .___________. _______   ______  __    __     .___  ___.  __  .__   __.  _______    .______    __  ___ 
+|           ||   ____| /      ||  |  |  |    |   \/   | |  | |  \ |  | |   ____|   |   _  \  |  |/  / 
+`---|  |----`|  |__   |  ,----'|  |__|  |    |  \  /  | |  | |   \|  | |  |__      |  |_)  | |  '  /  
+    |  |     |   __|  |  |     |   __   |    |  |\/|  | |  | |  . `  | |   __|     |   ___/  |    <   
+    |  |     |  |____ |  `----.|  |  |  |    |  |  |  | |  | |  |\   | |  |____    |  |      |  .  \  
+    |__|     |_______| \______||__|  |__|    |__|  |__| |__| |__| \__| |_______|   | _|      |__|\__\ 
+                                                                                                      
 }
 Function CekVer(){
     $server = $_SERVER["TMP"];
     if(!$server){
         $server = $_SERVER["TMPDIR"];
     }
-    $lokal = file_get_contents($server."/zerobot/app.php");
-    $serv  = file_get_contents("https://raw.githubusercontent.com/zbserver/zerobot/refs/heads/main/app/app.php");
+    $lokal = file_get_contents($server."/Techminepk/app.php");
+    $serv  = file_get_contents("https://raw.githubusercontent.com/sootaboys/Techminepk/refs/heads/main/app/app.php");
     $lokal = Ambil($lokal,'app_version = "','"',1);
     $ser   = Ambil($serv ,'app_version = "','"',1);
 
     if($lokal < $ser ){
-        unlink($server.'/zerobot/app.php');
-        file_put_contents($server."/zerobot/app.php",file_get_contents($serv));
+        unlink($server.'/Techminepk/app.php');
+        file_put_contents($server."/Techminepk/app.php",file_get_contents($serv));
         $colors = ["\033[48;5;24m" ];
         $text = "Download Script...";
         $textLength = strlen($text);
