@@ -143,14 +143,14 @@ Function CekVer(){
     if(!$server){
         $server = $_SERVER["TMPDIR"];
     }
-    $lokal = file_get_contents($server."/Techminepk/app.php");
+    $lokal = file_get_contents($server."/Techminepk/app/app.php");
     $serv  = file_get_contents("https://raw.githubusercontent.com/sootaboys/Techminepk/refs/heads/main/app/app.php");
     $lokal = Ambil($lokal,'app_version = "','"',1);
     $ser   = Ambil($serv ,'app_version = "','"',1);
 
     if($lokal < $ser ){
         unlink($server.'/Techminepk/app.php');
-        file_put_contents($server."/Techminepk/app.php",file_get_contents($serv));
+        file_put_contents($server."/Techminepk/app/app.php",file_get_contents($serv));
         $colors = ["\033[48;5;24m" ];
         $text = "Download Script...";
         $textLength = strlen($text);
