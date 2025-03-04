@@ -1,7 +1,7 @@
 <?php
 const
 app_version = "1.0.0",
-Telegram    ="t.me/official_zerobot";
+Telegram    ="t.me/Tech_mine_pk";
 define("a","\033[1;30m");
 define("d","\033[0m");
 define("m","\033[1;31m");
